@@ -1,15 +1,14 @@
 #include <iostream>
-#include <cstring> 
+#include<string>
 using namespace std;
 
 int main() {
-    char src[] = "Hello, world!";
-    char dest[50]; 
+    std::string original = "Hello, World!";
+    char buffer[20];
+    std::size_t length = original.copy(buffer,15,0); // Copies "Hello," into buffer
+    buffer[length] = '\0'; // Null-terminate the string
 
-    strcpy(dest, src); 
-
-    cout << "Source: " << src << endl;
-    cout << "Destination: " << dest << endl;
-
+    std::cout << "Buffer contains: " << buffer << std::endl;
     return 0;
 }
+
